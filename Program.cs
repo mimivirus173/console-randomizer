@@ -6,6 +6,12 @@ namespace ConsoleRandomizer
     {
         public static void Main(string[] args)
         {
+            // Console window settings
+            #pragma warning disable CA1416 // Validate platform compatibility
+            Console.WindowHeight = 20;
+            #pragma warning restore CA1416 // Validate platform compatibility
+
+            // Program
             Randomize();
         }
         public static void Randomize()
@@ -15,7 +21,7 @@ namespace ConsoleRandomizer
 
             // Arrays
             ConsoleColor[] colors = (ConsoleColor[])ConsoleColor.GetValues(typeof(ConsoleColor));
-            string[] alphabet = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
+            string[] chars = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
             // Main
             while (true)
@@ -23,9 +29,14 @@ namespace ConsoleRandomizer
                 Console.ReadKey();
                 Console.ForegroundColor = colors[randGen.Next(colors.Length)];
                 Console.BackgroundColor = colors[randGen.Next(colors.Length)];
-                for (int i = 0; i < 50; i++)
-                {
-                    Console.Write(alphabet[i]);
+                for(int i = 1; i < randGen.Next(1, 101); i++)
+                {              
+                    for(i = 0; i < randGen.Next(2000, 6001); i++)
+                    {
+                        Console.Write(chars[randGen.Next(1, 61)]);
+                    }
+                    Console.WriteLine(chars[randGen.Next(1, 61)]);
+                    Console.Title = (chars[randGen.Next(1, 61)]);
                 }
             }
         }
