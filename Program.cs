@@ -45,7 +45,6 @@ namespace ConsoleRandomizer
                 for (int i = 0; i < randGen.Next(1, 101); i++)
                 {
                     title = chars[randGen.Next(1, 61)];
-                    Console.Title = title + chars[randGen.Next(1, 61)]
                 }
             }
         }
