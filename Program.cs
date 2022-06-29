@@ -34,19 +34,19 @@ namespace ConsoleRandomizer
 
                 // Configures the console title
                 string[] title = new string[randGen.Next(1, 30)];
-                for (int k = 0; k < title.Length; k++)
+                for (int i = 0; i < title.Length; i++)
                 {
-                    title[k] = chars[randGen.Next(1, chars.Length)];
+                    title[i] = chars[randGen.Next(1, chars.Length)];
                 }
-                for (int l = 0; l < title.Length; l++)
+                for (int j = 0; j < title.Length; j++)
                 {
                     Console.Title = (string.Join("", title));
                 }
 
                 // Writes stuff in the console            
-                for (int i = 0; i < Console.WindowWidth; i++)
+                for (int k = 0; k < Console.WindowWidth; k++)
                 {
-                    for (int j = 0; j < Console.WindowWidth; j++)
+                    for (int l = 0; l < Console.WindowWidth; l++)
                     {
                         Console.Write(chars[randGen.Next(1, chars.Length)]);
                     }
