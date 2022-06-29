@@ -45,12 +45,12 @@ namespace ConsoleRandomizer
 
                 // Writes stuff in the console            
                 for (int i = 0; i < Console.WindowWidth; i++)
+                {
+                    for (int j = 0; j < Console.WindowWidth; j++)
                     {
-                        for (int j = 0; j < Console.WindowWidth; j++)
-                        {
-                            Console.Write(chars[randGen.Next(1, chars.Length)]);
-                        }
+                        Console.Write(chars[randGen.Next(1, chars.Length)]);
                     }
+                }
             }
         }
     }
